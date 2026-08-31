@@ -3,27 +3,184 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ぐるっと散歩 サポート</title>
+  <title>ぐるっと散歩｜20分から作る周回ウォーキングコース</title>
+  <meta name="description" content="20分・30分・45分など、使える時間を選ぶだけ。現在地から出発して戻る、実際の道路に沿った周回散歩コース候補を提案するiPhoneアプリです。アカウント・広告・分析SDKなし。Proは買い切りです。">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://somtum1120.github.io/calo-sanpo-support/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="ぐるっと散歩｜20分から作る周回ウォーキングコース">
+  <meta property="og:description" content="使える時間を選ぶだけ。今いる場所から歩いて戻る周回散歩コース候補を提案します。">
+  <meta property="og:url" content="https://somtum1120.github.io/calo-sanpo-support/">
+  <meta name="twitter:card" content="summary">
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.7; margin: 0 auto; max-width: 760px; padding: 32px 20px; color: #17201a; }
-    h1 { color: #1f9d4b; } a { color: #147c39; } .note { background: #f2f7f3; border-radius: 12px; padding: 16px; }
+    :root { color-scheme: light; --ink: #142118; --muted: #526058; --green: #147c39; --green-dark: #0d5f2a; --soft: #eef7f1; --line: #d5e3d9; --white: #fff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; color: var(--ink); background: #fbfdfb; line-height: 1.75; }
+    a { color: var(--green-dark); }
+    a:focus-visible, .button:focus-visible { outline: 3px solid #f0a000; outline-offset: 3px; }
+    .wrap { width: min(960px, calc(100% - 40px)); margin: 0 auto; }
+    header { background: rgba(251, 253, 251, .96); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 1; }
+    nav { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    nav strong { font-size: 1.05rem; }
+    nav div { display: flex; flex-wrap: wrap; gap: 16px; }
+    nav a { text-decoration: none; font-weight: 600; }
+    main { overflow: hidden; }
+    .hero { padding: 72px 0 56px; background: linear-gradient(180deg, var(--soft), #fbfdfb); }
+    .eyebrow { color: var(--green-dark); font-weight: 700; letter-spacing: .04em; }
+    h1 { max-width: 800px; margin: 10px 0 16px; font-size: clamp(2.2rem, 7vw, 4.4rem); line-height: 1.12; letter-spacing: -.03em; }
+    .lead { max-width: 720px; font-size: clamp(1.08rem, 3vw, 1.35rem); color: var(--muted); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button { display: inline-block; border-radius: 999px; padding: 13px 22px; text-decoration: none; font-weight: 700; }
+    .primary { background: var(--green-dark); color: var(--white); }
+    .secondary { border: 1px solid var(--green-dark); background: var(--white); }
+    .facts { margin-top: 18px; color: var(--muted); font-size: .95rem; }
+    section { padding: 56px 0; }
+    h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.3; margin: 0 0 22px; }
+    h3 { line-height: 1.4; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+    .step { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--soft); color: var(--green-dark); font-weight: 800; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    ul { padding-left: 1.3em; }
+    .privacy { background: var(--soft); }
+    .note { background: #fff8e8; border: 1px solid #edd9a5; border-radius: 14px; padding: 18px; }
+    footer { border-top: 1px solid var(--line); padding: 32px 0 48px; color: var(--muted); }
+    footer p { margin: 8px 0; }
+    @media (max-width: 760px) { header { position: static; } nav { align-items: flex-start; padding: 16px 0; flex-direction: column; } .hero { padding-top: 48px; } .grid, .split { grid-template-columns: 1fr; } }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ぐるっと散歩",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "iOS 18以降",
+    "description": "使える時間から、現在地を出発して戻る徒歩の周回コース候補を提案するiPhoneアプリです。",
+    "url": "https://somtum1120.github.io/calo-sanpo-support/",
+    "downloadUrl": "https://apps.apple.com/jp/app/id6802059360",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    }
+  }
+  </script>
 </head>
 <body>
-  <h1>ぐるっと散歩 サポート</h1>
-  <p>ぐるっと散歩は、時間や消費カロリーの目安から、現在地へ戻る散歩コースを提案するiPhoneアプリです。</p>
-  <h2>よくある質問</h2>
-  <h3>コースを作れません</h3>
-  <p>位置情報の「正確な位置情報」を有効にし、通信できる場所で再度お試しください。経路生成にはApple Mapsとの通信を使用します。</p>
-  <h3>Apple Mapsの経路がアプリ内と異なります</h3>
-  <p>Apple Mapsには出発・経由・帰着地点を渡します。Apple Mapsが徒歩経路を再計算するため、アプリ内の周回線と異なる場合があります。</p>
-  <h3>購入を復元したい</h3>
-  <p>アプリの「設定」またはPro画面から「購入を復元」を選択してください。</p>
-  <h3>退会やアカウント削除は必要ですか</h3>
-  <p>アカウント機能はありません。保存コースや設定はこのiPhone内に保存されます。</p>
-  <div class="note">所要時間と消費カロリーは推定値です。減量効果や道路の安全を保証するものではありません。</div>
-  <h2>お問い合わせ</h2>
-  <p>不具合の際は、iPhoneの機種、iOSバージョン、発生した操作、表示されたメッセージを添えて、<a href="https://github.com/somtum1120/calo-sanpo-support/issues">GitHub Issues</a>（投稿は公開されます。個人情報は記載しないでください） までご連絡ください。</p>
-  <p><a href="privacy.html">プライバシーポリシー</a></p>
+  <header>
+    <nav class="wrap" aria-label="サイト内ナビゲーション">
+      <strong>ぐるっと散歩</strong>
+      <div>
+        <a href="#how">使い方</a>
+        <a href="#plans">無料版とPro</a>
+        <a href="faq.html">よくある質問</a>
+        <a href="privacy.html">プライバシー</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="wrap">
+        <p class="eyebrow">iPhone向け周回散歩コース提案アプリ</p>
+        <h1>空き時間を、<br>ちょっといい散歩に。</h1>
+        <p class="lead">20分・30分・45分など、使える時間を選ぶだけ。今いる場所から歩いて戻る、実際の道路に沿った周回散歩コース候補を提案します。</p>
+        <div class="actions">
+          <a class="button primary" href="https://apps.apple.com/jp/app/id6802059360" rel="noopener noreferrer">App Storeで見る</a>
+          <a class="button secondary" href="#how">使い方を見る</a>
+        </div>
+        <p class="facts">iPhone対応 / 無料で開始 / Proは自動更新のない買い切り</p>
+      </div>
+    </div>
+
+    <section id="how">
+      <div class="wrap">
+        <h2>時間を選んで、候補を見て、歩き始める</h2>
+        <div class="grid">
+          <article class="card">
+            <span class="step" aria-hidden="true">1</span>
+            <h3>使える時間を選ぶ</h3>
+            <p>20分・30分・45分など、いま使える時間を選びます。Proでは25分などの自由入力もできます。</p>
+          </article>
+          <article class="card">
+            <span class="step" aria-hidden="true">2</span>
+            <h3>周回候補を確認する</h3>
+            <p>現在地へ戻る候補の地図、距離、推定時間、消費カロリーの目安を、出発前に確認します。</p>
+          </article>
+          <article class="card">
+            <span class="step" aria-hidden="true">3</span>
+            <h3>歩いて戻る</h3>
+            <p>コースを選んで歩き始めます。必要なときは、現在地から出発地点へ戻るルートを探せます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="plans">
+      <div class="wrap">
+        <h2>無料版で散歩を完了。Proは選択肢を増やす買い切り</h2>
+        <div class="split">
+          <article class="card">
+            <h3>無料版</h3>
+            <ul>
+              <li>20分・30分・45分などのプリセット</li>
+              <li>周回候補1件</li>
+              <li>コース保存、歩行、帰着、完了、記録</li>
+              <li>Apple Mapsへの受け渡し、GPX共有</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Pro（買い切り）</h3>
+            <ul>
+              <li>25分など目標を自由入力</li>
+              <li>最大3件の候補を見比べる</li>
+              <li>その日の気分に合う方向を選ぶ</li>
+              <li>サブスクリプション・自動更新なし</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="privacy">
+      <div class="wrap">
+        <h2>散歩を始めるために、アカウントは要りません</h2>
+        <div class="grid">
+          <div class="card"><h3>広告なし</h3><p>広告表示やアプリ横断トラッキングを目的にした仕組みを入れていません。</p></div>
+          <div class="card"><h3>分析SDKなし</h3><p>第三者の分析SDKや、開発者独自のサーバーを使用しません。</p></div>
+          <div class="card"><h3>歩行座標を保存しない</h3><p>歩行中の座標履歴は保存しません。設定や完了サマリーなどはiPhone内に保存します。</p></div>
+        </div>
+        <p><a href="privacy.html">プライバシーポリシーを読む</a></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>散歩コースを考える手間を減らす</h2>
+        <p>目的地を決めずに歩きたい日や、仕事・家事の合間に20分だけ身体を動かしたい日に使えます。距離を自分で測ったり、経由地を並べたりせず、候補を見てから出発できます。</p>
+        <p><a href="guide-20-minute-walk.html">20分の周回散歩コースを考えるときのポイント</a></p>
+        <p><a href="faq.html">よくある質問と困ったときの対処</a></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="note">
+          <strong>ご利用前に確認してください</strong>
+          <p>ルート、距離、時間、消費カロリーは推定・目安です。道路状況、通行規制、交通ルール、周囲の状況を確認し、無理のない範囲で利用してください。Apple Mapsへ渡した後は経路が再計算され、アプリ内の表示と異なる場合があります。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><strong>ぐるっと散歩</strong></p>
+      <p><a href="faq.html">サポート・よくある質問</a> / <a href="privacy.html">プライバシーポリシー</a></p>
+      <p id="contact">不具合の際は、iPhoneの機種、iOSバージョン、発生した操作、表示されたメッセージを添えて、App Storeのサポート連絡先からお問い合わせください。</p>
+      <p><small>© 2026 somtum1120</small></p>
+    </div>
+  </footer>
 </body>
 </html>
