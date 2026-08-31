@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://somtum1120.github.io/calo-sanpo-support/sitemap.xml
